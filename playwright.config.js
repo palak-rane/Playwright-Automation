@@ -13,6 +13,7 @@ import { defineConfig, devices } from "@playwright/test";
  * @see https://playwright.dev/docs/test-configuration
  */
 export default defineConfig({
+  
   testDir: "./tests",
   /* Run tests in files in parallel */
   fullyParallel: true,
@@ -26,6 +27,11 @@ export default defineConfig({
   reporter: "html",
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
+
+   
+    browserName: 'chromium',
+    headless: true,
+  
     /* Base URL to use in actions like `await page.goto('/')`. */
     // baseURL: 'http://127.0.0.1:3000',
 
@@ -35,11 +41,16 @@ export default defineConfig({
   },
 
   /* Configure projects for major browsers */
-  projects: [
+ /* projects: [
     {
       name: "chromium",
-      use: { ...devices["Desktop Chrome"] },
+      use: { ...devices["Desktop Chrome"],
+      headless: true,
+      },
     },
+    */
+
+  
     /*
     {
       name: 'firefox',
@@ -71,7 +82,7 @@ export default defineConfig({
     //   name: 'Google Chrome',
     //   use: { ...devices['Desktop Chrome'], channel: 'chrome' },
     // },
-  ],
+ // ], 
 
   /* Run your local dev server before starting the tests */
   // webServer: {

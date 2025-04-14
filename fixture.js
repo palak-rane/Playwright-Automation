@@ -3,7 +3,7 @@ import path from "path";
 import { HomePage } from "./pages/HomePage";
 import { SignupLoginPage } from "./pages/SignupLoginPage";
 import { SignupPage } from "./pages/SignupPage";
-import { LoginPage } from "./pages/loginPage";
+import { LoginPage } from "./pages/LoginPage";
 import { ProductPage } from "./pages/ProductPage";
 import { CartPage } from "./pages/CartPage";
 import { CheckoutPage } from "./pages/CheckoutPage";
@@ -14,7 +14,7 @@ export const test = base.test.extend({
     const signupLoginpage = new SignupLoginPage(page);
     await use(signupLoginpage);
   },
-
+  
   homePage: async ({ page }, use) => {
     const homePage = new HomePage(page);
     await use(homePage);
